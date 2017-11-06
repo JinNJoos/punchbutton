@@ -3,7 +3,7 @@
   <spriteName>spr_button</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1001</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -53,7 +53,15 @@ if (room = room1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check(ord("L")))
+            <string>var i = 0;repeat(4){
+    if device_mouse_check_button_pressed(i,mb_left)
+    and point_in_rectangle(device_mouse_x(i),device_mouse_y(i),bbox_left,bbox_top,bbox_right,bbox_bottom) {
+          keyboard_key_press(ord('L'));
+          keyboard_key_release(ord('L'));
+    }
+    i ++;
+}
+if (keyboard_check(ord("L")))
 {
     image_index = 1;
     if (room = room1)

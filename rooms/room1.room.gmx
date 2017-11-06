@@ -54,6 +54,7 @@
     <instance objName="o_p1button" x="40" y="160" name="inst_C2FB7D00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_p2button" x="280" y="160" name="inst_001A8908" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_retry" x="160" y="90" name="inst_7A559327" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_reset" x="300" y="20" name="inst_2110391B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

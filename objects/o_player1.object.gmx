@@ -262,7 +262,7 @@ if (hp &lt;= 0)
           <argument>
             <kind>1</kind>
             <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,colour,1);
-draw_text(x,y-50,string(mode));
+//draw_text(x,y-50,string(mode));
 draw_text(x,y+50,string(dmg));
 draw_rectangle_color(140-hp,20,140,40,bar,bar,bar,bar,false);
 draw_text(120,30,string(hp));
