@@ -147,6 +147,7 @@ else if (global.action = "quick")
         }
         with (o_player2)
         {
+            damage = instance_create(x,y,obj_damage);
             if (mode = "Press")
             {
                 hp -= o_player1.dmg;
@@ -197,6 +198,7 @@ else if (global.action = "quick")
         }
         with (o_player1)
         {
+            damage = instance_create(x,y,obj_damage);
             if (mode = "Press")
             {
                 hp -= o_player2.dmg;
@@ -295,6 +297,7 @@ else if (global.action = "rapid")
         }
         with (o_player2)
         {
+        damage = instance_create(x,y,obj_damage);
             if (audio_is_playing(f_p2muda1))
             {
                 audio_stop_sound(f_p2muda1);
@@ -362,6 +365,7 @@ else if (global.action = "rapid")
         }
         with (o_player1)
         {
+        damage = instance_create(x,y,obj_damage);
             if (audio_is_playing(f_p1ora1))
             {
                 audio_stop_sound(f_p1ora1);
@@ -458,6 +462,7 @@ else if (global.action = "gauge")
                 audio_play_sound(f_p1strike3,1,false);
                 with (o_player2)
                 {
+                damage = instance_create(x,y,obj_damage);
                     if (mode = "Pose")
                     or (mode = "Charge")
                     {
@@ -518,6 +523,7 @@ else if (global.action = "gauge")
                         audio_play_sound(f_p2strike3,1,false);
                         with (o_player1)
                         {
+                        damage = instance_create(x,y,obj_damage);
                             mode = "Hurt";
                             motion_add(180,4);
                             image_index = 0;
@@ -620,6 +626,7 @@ else if (global.action = "gauge")
                 audio_play_sound(f_p2strike3,1,false);
                 with (o_player1)
                 {
+                damage = instance_create(x,y,obj_damage);
                     if (mode = "Pose")
                     or (mode = "Charge")
                     {
@@ -680,6 +687,7 @@ else if (global.action = "gauge")
                         audio_play_sound(f_p1strike3,1,false);
                         with (o_player2)
                         {
+                        damage = instance_create(x,y,obj_damage);
                             mode = "Hurt";
                             motion_add(0,4);
                             image_index = 0;

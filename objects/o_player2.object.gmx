@@ -265,7 +265,7 @@ if (hp &lt;= 0)
 //draw_text(x,y-50,string(mode));
 draw_text(x,y+50,string(dmg));
 draw_rectangle_color(180,20,180+hp,40,bar,bar,bar,bar,false);
-draw_text(200,30,string(hp));
+//draw_text(200,30,string(hp));
 </string>
           </argument>
         </arguments>

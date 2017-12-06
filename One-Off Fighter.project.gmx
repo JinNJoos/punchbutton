@@ -70,9 +70,17 @@
     <sprite>sprites\spr_spark</sprite>
     <sprite>sprites\spr_bg</sprite>
     <sprite>sprites\spr_guide</sprite>
+    <sprite>sprites\spr_hint_clock</sprite>
+    <sprite>sprites\spr_hint_rapid</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\draw_text_outline.gml</script>
+  </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_test</font>
+  </fonts>
   <objects name="objects">
     <objects name="Players">
       <object>objects\o_parent</object>
@@ -96,8 +104,10 @@
     <object>objects\o_bg</object>
     <object>objects\o_retry</object>
     <object>objects\o_guide</object>
+    <object>objects\obj_damage</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_start</room>
     <room>rooms\room0</room>
     <room>rooms\room1</room>
   </rooms>
