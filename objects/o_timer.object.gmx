@@ -147,10 +147,11 @@ else if (global.action = "quick")
         }
         with (o_player2)
         {
-            damage = instance_create(x,y,obj_damage);
             if (mode = "Press")
             {
+                damage = instance_create(x,y,obj_damage);
                 hp -= o_player1.dmg;
+                damage.dmg = o_player1.dmg;
                 mode = "Hurt";
                 motion_add(0,3);
                 image_index = 0;
@@ -164,7 +165,10 @@ else if (global.action = "quick")
             }
             if (mode = "Fault")
             {
+                damage = instance_create(x,y,obj_damage);
                 hp -= round(o_player1.dmg*1.5);
+                damage.dmg = round(o_player1.dmg*1.5);
+                
                 mode = "Hurt";
                 motion_add(0,4);
                 image_index = 0;
@@ -178,7 +182,9 @@ else if (global.action = "quick")
             }
             if (mode = "Go")
             {
+                damage = instance_create(x,y,obj_damage);
                 hp -= round(o_player1.dmg/2);
+                damage.dmg = round(o_player1.dmg/2);
                 mode = "Guard";
                 motion_add(0,2);
                 image_index = 0;
@@ -198,10 +204,11 @@ else if (global.action = "quick")
         }
         with (o_player1)
         {
-            damage = instance_create(x,y,obj_damage);
             if (mode = "Press")
             {
+                damage = instance_create(x,y,obj_damage);
                 hp -= o_player2.dmg;
+                damage.dmg = o_player2.dmg;
                 mode = "Hurt";
                 motion_add(180,3);
                 image_index = 0;
@@ -215,7 +222,9 @@ else if (global.action = "quick")
             }
             if (mode = "Fault")
             {
+                damage = instance_create(x,y,obj_damage);
                 hp -= round(o_player2.dmg*1.5);
+                damage.dmg = round(o_player2.dmg*1.5);
                 mode = "Hurt";
                 motion_add(180,4);
                 image_index = 0;
@@ -229,7 +238,9 @@ else if (global.action = "quick")
             }
             if (mode = "Go")
             {
+                damage = instance_create(x,y,obj_damage);
                 hp -= round(o_player2.dmg/2);
+                damage.dmg = round(o_player2.dmg/2);
                 mode = "Guard";
                 motion_add(180,2);
                 image_index = 0;
@@ -297,7 +308,6 @@ else if (global.action = "rapid")
         }
         with (o_player2)
         {
-        damage = instance_create(x,y,obj_damage);
             if (audio_is_playing(f_p2muda1))
             {
                 audio_stop_sound(f_p2muda1);
@@ -312,7 +322,9 @@ else if (global.action = "rapid")
                 mode = "Hurt";
                 motion_add(0,3);
                 image_index = 0;
+                damage = instance_create(x,y,obj_damage);
                 hp -= o_player1.dmg;
+                damage.dmg = o_player1.dmg;
                 alarm[0] = 50;
                 audio_play_sound(choose(f_p2hurt1,f_p2hurt2,f_p2hurt3),1,false);
                 audio_play_sound(choose(f_punch5,f_punch6),1,false);
@@ -326,7 +338,9 @@ else if (global.action = "rapid")
                 mode = "Hurt";
                 motion_add(0,4);
                 image_index = 0;
+                damage = instance_create(x,y,obj_damage);
                 hp -= round(o_player1.dmg*1.5);
+                damage.dmg = round(o_player1.dmg*1.5);
                 alarm[0] = 50;
                 audio_play_sound(choose(f_p2hurt1,f_p2hurt2,f_p2hurt3),1,false);
                 audio_play_sound(choose(f_punch5,f_punch6),1,false);
@@ -340,7 +354,9 @@ else if (global.action = "rapid")
                 mode = "Guard";
                 motion_add(0,2);
                 image_index = 0;
+                damage = instance_create(x,y,obj_damage);
                 hp -= round(o_player1.dmg/2);
+                damage.dmg = round(o_player1.dmg/2);
                 alarm[0] = 50;
                 audio_play_sound(f_guard,1,false);
             }
@@ -365,7 +381,6 @@ else if (global.action = "rapid")
         }
         with (o_player1)
         {
-        damage = instance_create(x,y,obj_damage);
             if (audio_is_playing(f_p1ora1))
             {
                 audio_stop_sound(f_p1ora1);
@@ -380,7 +395,9 @@ else if (global.action = "rapid")
                 mode = "Hurt";
                 motion_add(180,3);
                 image_index = 0;
+                damage = instance_create(x,y,obj_damage);
                 hp -= o_player2.dmg;
+                damage.dmg = o_player2.dmg;
                 alarm[0] = 50;
                 audio_play_sound(choose(f_p1hurt1,f_p1hurt2,f_p1hurt3),1,false);
                 audio_play_sound(choose(f_punch5,f_punch6),1,false);
@@ -394,7 +411,9 @@ else if (global.action = "rapid")
                 mode = "Hurt";
                 motion_add(180,4);
                 image_index = 0;
+                damage = instance_create(x,y,obj_damage);
                 hp -= round(o_player2.dmg*1.5);
+                damage.dmg = round(o_player2.dmg*1.5);
                 alarm[0] = 50;
                 audio_play_sound(choose(f_p1hurt1,f_p1hurt2,f_p1hurt3),1,false);
                 audio_play_sound(choose(f_punch5,f_punch6),1,false);
@@ -408,7 +427,9 @@ else if (global.action = "rapid")
                 mode = "Guard";
                 motion_add(180,2);
                 image_index = 0;
+                damage = instance_create(x,y,obj_damage);
                 hp -= round(o_player2.dmg/2);
+                damage.dmg = round(o_player2.dmg/2);
                 alarm[0] = 50;
                 audio_play_sound(f_guard,1,false);
             }
@@ -462,14 +483,15 @@ else if (global.action = "gauge")
                 audio_play_sound(f_p1strike3,1,false);
                 with (o_player2)
                 {
-                damage = instance_create(x,y,obj_damage);
                     if (mode = "Pose")
                     or (mode = "Charge")
                     {
                         mode = "Hurt";
                         motion_add(0,3);
                         image_index = 0;
+                        damage = instance_create(x,y,obj_damage);
                         hp -= o_player1.dmg;
+                        damage.dmg = o_player1.dmg;
                         alarm[0] = 50;
                         if (audio_is_playing(f_p2charge))
                         {
@@ -487,7 +509,9 @@ else if (global.action = "gauge")
                         mode = "Hurt";
                         motion_add(0,4);
                         image_index = 0;
+                        damage = instance_create(x,y,obj_damage);
                         hp -= round(o_player1.dmg*1.5);
+                        damage.dmg = round(o_player1.dmg*1.5);
                         alarm[0] = 50;
                         audio_play_sound(choose(f_p2hurt1,f_p2hurt2,f_p2hurt3),1,false);
                         audio_play_sound(choose(f_punch5,f_punch6),1,false);
@@ -501,7 +525,9 @@ else if (global.action = "gauge")
                         mode = "Guard";
                         motion_add(0,2);
                         image_index = 0;
+                        damage = instance_create(x,y,obj_damage);
                         hp -= round(o_player1.dmg/2);
+                        damage.dmg = round(o_player1.dmg/2);
                         alarm[0] = 50;
                         audio_play_sound(f_guard,1,false);
                     }
@@ -527,7 +553,9 @@ else if (global.action = "gauge")
                             mode = "Hurt";
                             motion_add(180,4);
                             image_index = 0;
+                            damage = instance_create(x,y,obj_damage);
                             hp -= round(o_player2.dmg*1.5);
+                            damage.dmg = round(o_player2.dmg*1.5);
                             alarm[0] = 50;
                             audio_play_sound(choose(f_p1hurt1,f_p1hurt2,f_p1hurt3),1,false);
                             audio_play_sound(choose(f_punch5,f_punch6),1,false);
@@ -580,7 +608,9 @@ else if (global.action = "gauge")
                             mode = "Hurt";
                             motion_add(180,3);
                             image_index = 0;
+                            damage = instance_create(x,y,obj_damage);
                             hp -= o_player2.dmg;
+                            damage.dmg = o_player2.dmg;
                             alarm[0] = 50;
                             audio_play_sound(choose(f_p1hurt1,f_p1hurt2,f_p1hurt3),1,false);
                             audio_play_sound(choose(f_punch5,f_punch6),1,false);
@@ -626,14 +656,15 @@ else if (global.action = "gauge")
                 audio_play_sound(f_p2strike3,1,false);
                 with (o_player1)
                 {
-                damage = instance_create(x,y,obj_damage);
                     if (mode = "Pose")
                     or (mode = "Charge")
                     {
                         mode = "Hurt";
                         motion_add(180,3);
                         image_index = 0;
+                        damage = instance_create(x,y,obj_damage);
                         hp -= o_player2.dmg;
+                        damage.dmg = o_player2.dmg;
                         alarm[0] = 50;
                         if (audio_is_playing(f_p1charge))
                         {
@@ -651,7 +682,9 @@ else if (global.action = "gauge")
                         mode = "Hurt";
                         motion_add(180,4);
                         image_index = 0;
+                        damage = instance_create(x,y,obj_damage);
                         hp -= round(o_player2.dmg*1.5);
+                        damage.dmg = round(o_player2.dmg*1.5);
                         alarm[0] = 50;
                         audio_play_sound(choose(f_p1hurt1,f_p1hurt2,f_p1hurt3),1,false);
                         audio_play_sound(choose(f_punch5,f_punch6),1,false);
@@ -665,7 +698,9 @@ else if (global.action = "gauge")
                         mode = "Guard";
                         motion_add(180,2);
                         image_index = 0;
+                        damage = instance_create(x,y,obj_damage);
                         hp -= round(o_player2.dmg/2);
+                        damage.dmg = round(o_player2.dmg/2);
                         alarm[0] = 50;
                         audio_play_sound(f_guard,1,false);
                     }
@@ -691,7 +726,9 @@ else if (global.action = "gauge")
                             mode = "Hurt";
                             motion_add(0,4);
                             image_index = 0;
+                            damage = instance_create(x,y,obj_damage);
                             hp -= round(o_player1.dmg*1.5);
+                            damage.dmg = round(o_player1.dmg*1.5);
                             alarm[0] = 50;
                             audio_play_sound(choose(f_p2hurt1,f_p2hurt2,f_p2hurt3),1,false);
                             audio_play_sound(choose(f_punch5,f_punch6),1,false);
@@ -744,7 +781,9 @@ else if (global.action = "gauge")
                             mode = "Hurt";
                             motion_add(0,3);
                             image_index = 0;
+                            damage = instance_create(x,y,obj_damage);
                             hp -= round(o_player1.dmg);
+                            damage.dmg = round(o_player1.dmg);
                             alarm[0] = 50;
                             audio_play_sound(choose(f_p2hurt1,f_p2hurt2,f_p2hurt3),1,false);
                             audio_play_sound(choose(f_punch5,f_punch6),1,false);

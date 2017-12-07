@@ -30,6 +30,7 @@ hp = 100;
 dmg = 0;
 colour = c_white;
 bar = c_yellow;
+damage = id;
 </string>
           </argument>
         </arguments>
@@ -263,8 +264,9 @@ if (hp &lt;= 0)
             <kind>1</kind>
             <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,colour,1);
 //draw_text(x,y-50,string(mode));
-draw_text(x,y+50,string(dmg));
-draw_rectangle_color(140-hp,20,140,40,bar,bar,bar,bar,false);
+//draw_text(x,y+50,string(dmg));
+draw_rectangle_colour(140-100,20,140,40,c_black,c_black,c_black,c_black,false);
+draw_rectangle_colour(140-hp,20,140,40,bar,bar,bar,bar,false);
 //draw_text(120,30,string(hp));
 </string>
           </argument>
