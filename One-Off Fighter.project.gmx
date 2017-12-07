@@ -72,6 +72,8 @@
     <sprite>sprites\spr_guide</sprite>
     <sprite>sprites\spr_hint_clock</sprite>
     <sprite>sprites\spr_hint_rapid</sprite>
+    <sprite>sprites\spr_1player</sprite>
+    <sprite>sprites\spr_2player</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -105,6 +107,9 @@
     <object>objects\o_retry</object>
     <object>objects\o_guide</object>
     <object>objects\obj_damage</object>
+    <object>objects\o_1player</object>
+    <object>objects\o_2player</object>
+    <object>objects\o_2cpu</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

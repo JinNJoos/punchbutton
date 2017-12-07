@@ -74,11 +74,13 @@ if (global.action = "wait")
     {
         alarm[0] = 30;
         instance_create(160,90,o_clock);
+        if players =1{o_2cpu.alarm[0]=irandom_range(10,30);}
     }
     if (global.action = "rapid")
     {
         alarm[0] = 120;
         instance_create(160,90,o_go);
+        if players =1{o_2cpu.alarm[1]=2;}
     }
     if (global.action = "gauge")
     {
@@ -440,6 +442,7 @@ else if (global.action = "rapid")
         with (o_go)
         {
             instance_destroy();
+            if players =1{o_2cpu.alarm[1]=-1;}
         }
     }
     global.action = "wait";
