@@ -72,19 +72,19 @@ if (global.action = "wait")
     audio_play_sound(f_action,1,false);
     if (global.action = "quick")
     {
-        alarm[0] = 30;
+        alarm[0] = 30-level;
         instance_create(160,90,o_clock);
-        if players =1{o_2cpu.alarm[0]=irandom_range(10,30);}
+        if players =1{o_2cpu.alarm[0]=irandom_range(30,50)-(level*2);}
     }
     if (global.action = "rapid")
     {
-        alarm[0] = 120;
+        alarm[0] = 120-(level *5);
         instance_create(160,90,o_go);
         if players =1{o_2cpu.alarm[1]=2;}
     }
     if (global.action = "gauge")
     {
-        alarm[0] = 120;
+        alarm[0] = 120-(level *5);
         instance_create(160,160,o_gauge);
     }
     with (o_player1)
@@ -552,7 +552,6 @@ else if (global.action = "gauge")
                         audio_play_sound(f_p2strike3,1,false);
                         with (o_player1)
                         {
-                        damage = instance_create(x,y,obj_damage);
                             mode = "Hurt";
                             motion_add(180,4);
                             image_index = 0;
@@ -725,7 +724,6 @@ else if (global.action = "gauge")
                         audio_play_sound(f_p1strike3,1,false);
                         with (o_player2)
                         {
-                        damage = instance_create(x,y,obj_damage);
                             mode = "Hurt";
                             motion_add(0,4);
                             image_index = 0;
@@ -867,7 +865,7 @@ and (o_player2.mode = "Ready")
 {
     o_player1.mode = "Stand";
     o_player2.mode = "Stand";
-    alarm[0] = 60 + random(240);
+    alarm[0] = 60 + random(240) - (level *5);
     global.action = "wait";
     if (instance_exists(o_guide))
     {

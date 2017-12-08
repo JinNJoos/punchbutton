@@ -74,6 +74,8 @@
     <sprite>sprites\spr_hint_rapid</sprite>
     <sprite>sprites\spr_1player</sprite>
     <sprite>sprites\spr_2player</sprite>
+    <sprite>sprites\spr_logo_ds</sprite>
+    <sprite>sprites\spr_logo_jj</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -110,6 +112,8 @@
     <object>objects\o_1player</object>
     <object>objects\o_2player</object>
     <object>objects\o_2cpu</object>
+    <object>objects\o_ds</object>
+    <object>objects\o_jj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

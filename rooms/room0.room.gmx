@@ -64,6 +64,8 @@
     <instance objName="o_1player" x="110" y="70" name="inst_C04B8552" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_2player" x="110" y="120" name="inst_E91A83BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_2cpu" x="270" y="150" name="inst_42213073" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_ds" x="10" y="120" name="inst_4CB36EF2" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="o_jj" x="260" y="130" name="inst_BF5CDAAF" locked="0" code="" scaleX="0.25" scaleY="0.25" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

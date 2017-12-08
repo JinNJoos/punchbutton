@@ -200,6 +200,7 @@ if (hp &lt;= 25 &amp;&amp; hp &gt; 0)
 }
 if (hp &lt;= 0)
 {
+    image_alpha -= 0.025;
     if not (mode = "K.O.")
     {
         hp = 0;
@@ -262,11 +263,12 @@ if (hp &lt;= 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,colour,1);
+            <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,colour,image_alpha);
 //draw_text(x,y-50,string(mode));
 //draw_text(x,y+50,string(dmg));
+if !instance_exists(o_guide){
 draw_rectangle_colour(140-100,20,140,40,c_black,c_black,c_black,c_black,false);
-draw_rectangle_colour(140-hp,20,140,40,bar,bar,bar,bar,false);
+draw_rectangle_colour(140-hp,20,140,40,bar,bar,bar,bar,false);}
 //draw_text(120,30,string(hp));
 </string>
           </argument>
@@ -304,12 +306,12 @@ or (mode = "Punch")
 {
     alarm[1] = 10;
 }
-if (mode = "Press A")
+/*if (mode = "Press A")
 {
     mode = "Ready";
     audio_play_sound(f_ready,1,false);
     audio_play_sound(f_p1ready,1,false);
-}
+}*/
 </string>
           </argument>
         </arguments>

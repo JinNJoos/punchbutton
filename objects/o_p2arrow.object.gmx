@@ -27,6 +27,11 @@
             <kind>1</kind>
             <string>image_xscale = -1;
 mode = "move";
+if players = 1{
+    goal = irandom_range(10,90)+(level*2);
+    goal = clamp(goal,10,90);
+    if !(goal % 2 = 0){goal ++}
+    }
 </string>
           </argument>
         </arguments>
@@ -55,6 +60,60 @@ mode = "move";
     {
         x = o_gauge.x;
         y = o_gauge.y - o_gauge.strength;
+        if players = 1{
+            show_debug_message(goal);
+            if o_gauge.strength = goal{
+                press_p2 = true;
+            }
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if press_p2{
+    if not (o_player2.mode = "Fault")
+    {
+        if (mode = "move")
+        {
+            mode = "press";
+            audio_play_sound(f_set,1,false);
+            if (o_gauge.strength &gt; 90)
+            {
+                o_player2.dmg = 0;
+                o_player2.mode = "Fault";
+                audio_play_sound(f_p2hurt1,1,false);
+            }
+            if (o_gauge.strength &lt;= 10)
+            {
+                o_player2.dmg = 0;
+                o_player2.mode = "Defend";
+            }
+            if (o_gauge.strength &lt;= 90)
+            and (o_gauge.strength &gt; 10)
+            {
+                o_player2.dmg = round(o_gauge.strength/4);
+                o_player2.mode = "Charge";
+                audio_play_sound(f_p2charge,1,false);
+            }
+        }
     }
 }
 </string>
@@ -79,29 +138,31 @@ mode = "move";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not (o_player2.mode = "Fault")
-{
-    if (mode = "move")
+            <string>if players = 2{
+    if not (o_player2.mode = "Fault")
     {
-        mode = "press";
-        audio_play_sound(f_set,1,false);
-        if (o_gauge.strength &gt; 90)
+        if (mode = "move")
         {
-            o_player2.dmg = 0;
-            o_player2.mode = "Fault";
-            audio_play_sound(f_p2hurt1,1,false);
-        }
-        if (o_gauge.strength &lt;= 10)
-        {
-            o_player2.dmg = 0;
-            o_player2.mode = "Defend";
-        }
-        if (o_gauge.strength &lt;= 90)
-        and (o_gauge.strength &gt; 10)
-        {
-            o_player2.dmg = round(o_gauge.strength/4);
-            o_player2.mode = "Charge";
-            audio_play_sound(f_p2charge,1,false);
+            mode = "press";
+            audio_play_sound(f_set,1,false);
+            if (o_gauge.strength &gt; 90)
+            {
+                o_player2.dmg = 0;
+                o_player2.mode = "Fault";
+                audio_play_sound(f_p2hurt1,1,false);
+            }
+            if (o_gauge.strength &lt;= 10)
+            {
+                o_player2.dmg = 0;
+                o_player2.mode = "Defend";
+            }
+            if (o_gauge.strength &lt;= 90)
+            and (o_gauge.strength &gt; 10)
+            {
+                o_player2.dmg = round(o_gauge.strength/4);
+                o_player2.mode = "Charge";
+                audio_play_sound(f_p2charge,1,false);
+            }
         }
     }
 }
