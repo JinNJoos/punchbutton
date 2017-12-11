@@ -51,11 +51,18 @@
       <sprite>sprites\spr_p1stand</sprite>
       <sprite>sprites\spr_p1guard</sprite>
       <sprite>sprites\spr_p1rapid</sprite>
+      <sprite>sprites\spr_punch</sprite>
+      <sprite>sprites\spr_punch_bxr</sprite>
     </sprites>
     <sprites name="Player 2">
       <sprite>sprites\spr_p2stand</sprite>
       <sprite>sprites\spr_p2guard</sprite>
       <sprite>sprites\spr_p2rapid</sprite>
+    </sprites>
+    <sprites name="Boxer">
+      <sprite>sprites\spr_bxrstand</sprite>
+      <sprite>sprites\spr_bxrapid</sprite>
+      <sprite>sprites\spr_bxrguard</sprite>
     </sprites>
     <sprites name="Prompts">
       <sprite>sprites\spr_clock</sprite>
@@ -66,7 +73,6 @@
       <sprite>sprites\spr_press</sprite>
       <sprite>sprites\spr_reset</sprite>
     </sprites>
-    <sprite>sprites\spr_punch</sprite>
     <sprite>sprites\spr_spark</sprite>
     <sprite>sprites\spr_bg</sprite>
     <sprite>sprites\spr_guide</sprite>
@@ -76,11 +82,16 @@
     <sprite>sprites\spr_2player</sprite>
     <sprite>sprites\spr_logo_ds</sprite>
     <sprite>sprites\spr_logo_jj</sprite>
+    <sprite>sprites\spr_logo</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+    <background>background\background1</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\draw_text_outline.gml</script>
+    <script>scripts\scr_costume.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_test</font>
@@ -113,10 +124,14 @@
     <object>objects\o_2player</object>
     <object>objects\o_2cpu</object>
     <object>objects\o_ds</object>
+    <object>objects\o_logo</object>
     <object>objects\o_jj</object>
+    <object>objects\obj_fade</object>
+    <object>objects\start</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
+    <room>rooms\room3</room>
     <room>rooms\room0</room>
     <room>rooms\room1</room>
   </rooms>

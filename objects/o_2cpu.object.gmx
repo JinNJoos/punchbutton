@@ -28,7 +28,7 @@
             <string>///rapid
 press_p2=true;
 if global.action = "rapid"{alarm[1]=irandom_range(20,30)-(level*2);
-alarm[1]=clamp(alarm[1],2,30)}
+alarm[1]=clamp(alarm[1],10,30)}
 </string>
           </argument>
         </arguments>

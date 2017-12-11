@@ -28,7 +28,7 @@
             <string>var i = 0;repeat(5){
     if device_mouse_check_button_pressed(i,mb_left)
     and point_in_rectangle(device_mouse_x(0),device_mouse_y(0),bbox_left,bbox_top,bbox_right,bbox_bottom) {
-          game_restart();
+          room_restart();
     }
     i ++;
 }

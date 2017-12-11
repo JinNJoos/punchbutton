@@ -73,18 +73,20 @@ if (global.action = "wait")
     if (global.action = "quick")
     {
         alarm[0] = 30-level;
+        alarm[0] = clamp(alarm[0],20,30);
         instance_create(160,90,o_clock);
         if players =1{o_2cpu.alarm[0]=irandom_range(30,50)-(level*2);}
     }
     if (global.action = "rapid")
     {
         alarm[0] = 120-(level *5);
+        alarm[0] = clamp(alarm[0],60,120);
         instance_create(160,90,o_go);
-        if players =1{o_2cpu.alarm[1]=2;}
+        if players =1{o_2cpu.alarm[1]=5;}
     }
     if (global.action = "gauge")
     {
-        alarm[0] = 120-(level *5);
+        alarm[0] = 120;
         instance_create(160,160,o_gauge);
     }
     with (o_player1)
@@ -865,7 +867,8 @@ and (o_player2.mode = "Ready")
 {
     o_player1.mode = "Stand";
     o_player2.mode = "Stand";
-    alarm[0] = 60 + random(240) - (level *5);
+    alarm[0] = 60 + random(240) - (level *20);
+    alarm[0]= clamp(alarm[0],30,300);
     global.action = "wait";
     if (instance_exists(o_guide))
     {

@@ -31,6 +31,8 @@ dmg = 0;
 colour = c_white;
 bar = c_yellow;
 damage = id;
+scr_costume();
+
 </string>
           </argument>
         </arguments>
@@ -143,7 +145,7 @@ or (mode = "Spam")
 or (mode = "Pose")
 {
     colour = c_white;
-    sprite_index = spr_p1stand;
+    sprite_index = stand;
     image_speed = random(0.2+((100-hp)/300));
     x = 110;
     y = 100;
@@ -151,7 +153,7 @@ or (mode = "Pose")
 if (mode = "Fault")
 {
     colour = c_silver;
-    sprite_index = spr_p1stand;
+    sprite_index = stand;
     image_speed = random(0.2+((100-hp)/300));
     x = 110;
     y = 100;
@@ -159,33 +161,33 @@ if (mode = "Fault")
 if (mode = "Strike")
 {
     colour = c_white;
-    sprite_index = spr_p1rapid;
+    sprite_index = rapid;
     image_speed = 0;
     image_index = 0;
 }
 if (mode = "Punch")
 {
     colour = c_white;
-    sprite_index = spr_p1rapid;
+    sprite_index = rapid;
     image_speed = 0.5;
 }
 if (mode = "Hurt")
 {
     colour = c_orange;
-    sprite_index = spr_p1stand;
+    sprite_index = stand;
     friction = 0.2;
 }
 if (mode = "Guard")
 {
     colour = c_yellow;
-    sprite_index = spr_p1guard;
+    sprite_index = guard;
     image_speed = 0.5;
     friction = 0.2;
 }
 if (mode = "Block")
 {
     colour = c_white;
-    sprite_index = spr_p1guard;
+    sprite_index = guard;
     image_speed = 0.5;
 }
 
@@ -236,7 +238,7 @@ if (hp &lt;= 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (sprite_index = spr_p1guard)
+            <string>if (sprite_index = guard)
 {
     image_index = image_number - 1;
     image_speed = 0;
@@ -337,6 +339,7 @@ or (mode = "Punch")
             <string>if (mode = "Spam")
 {
     a = instance_create(x+random_range(-10,30),y-random(30),o_punch);
+    a.sprite_index = punch;
     with (a)
     {
         image_yscale = 1;
@@ -351,6 +354,7 @@ or (mode = "Punch")
 else if (mode = "Punch")
 {
     a = instance_create(x+random_range(-10,30),y-random(30),o_punch);
+    a.sprite_index = punch;
     with (a)
     {
         image_yscale = 1;
@@ -367,7 +371,7 @@ else if (mode = "Punch")
 if (mode = "Block")
 {
     mode = "Spam";
-    sprite_index = spr_p1stand;
+    sprite_index = stand;
     image_speed = 0.2;
 }
 </string>
