@@ -52,22 +52,6 @@
   </views>
   <instances>
     <instance objName="o_bg" x="0" y="0" name="inst_01272A89" locked="0" code="" scaleX="0.893854737281799" scaleY="0.891089081764221" colour="4294967295" rotation="0"/>
-    <instance objName="o_guide" x="0" y="0" name="inst_6EBDEF54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_player1" x="110" y="100" name="inst_347FC0E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_player2" x="210" y="100" name="inst_FFE3E450" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_timer" x="160" y="90" name="inst_2F2EE730" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_p1button" x="40" y="160" name="inst_3AECC259" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_p2button" x="280" y="160" name="inst_9213813A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_parent" x="110" y="90" name="inst_3AF4D523" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_parent" x="210" y="90" name="inst_E6F8F6CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_reset" x="300" y="20" name="inst_B10B45E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_1player" x="110" y="70" name="inst_C04B8552" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_2player" x="110" y="120" name="inst_E91A83BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_2cpu" x="270" y="150" name="inst_42213073" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_ds" x="20" y="120" name="inst_4CB36EF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_jj" x="260" y="130" name="inst_BF5CDAAF" locked="0" code="" scaleX="0.25" scaleY="0.25" colour="4294967295" rotation="0"/>
-    <instance objName="o_logo" x="100" y="10" name="inst_0CDF198C" locked="0" code="" scaleX="0.349999994039536" scaleY="0.349999994039536" colour="4294967295" rotation="0"/>
-    <instance objName="o_how" x="0" y="0" name="inst_04D08B4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -21,7 +21,18 @@ globalvar press_p2;press_p2=false;
 globalvar release_p2;release_p2=false;
 globalvar hold_p2;hold_p2=false;
 
-randomize();</code>
+randomize();
+
+//Size
+globalvar system_device;system_device=os_device
+ini_open("config.ini");
+    globalvar bgm;bgm=ini_read_real('volume', 'bgm', 1);
+    globalvar sfx;sfx=ini_read_real('volume', 'sfx', .8);
+ini_close();
+globalvar s_music; s_music= audio_emitter_create();
+globalvar s_sound; s_sound= audio_emitter_create();
+audio_emitter_gain(s_music,bgm);
+audio_emitter_gain(s_sound,sfx);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

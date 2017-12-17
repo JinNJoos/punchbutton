@@ -52,7 +52,6 @@
       <sprite>sprites\spr_p1guard</sprite>
       <sprite>sprites\spr_p1rapid</sprite>
       <sprite>sprites\spr_punch</sprite>
-      <sprite>sprites\spr_punch_bxr</sprite>
     </sprites>
     <sprites name="Player 2">
       <sprite>sprites\spr_p2stand</sprite>
@@ -63,6 +62,13 @@
       <sprite>sprites\spr_bxrstand</sprite>
       <sprite>sprites\spr_bxrapid</sprite>
       <sprite>sprites\spr_bxrguard</sprite>
+      <sprite>sprites\spr_punch_bxr</sprite>
+    </sprites>
+    <sprites name="UFC">
+      <sprite>sprites\spr_ufcstand</sprite>
+      <sprite>sprites\spr_ufcrapid</sprite>
+      <sprite>sprites\spr_ufcguard</sprite>
+      <sprite>sprites\spr_punch_ufc</sprite>
     </sprites>
     <sprites name="Prompts">
       <sprite>sprites\spr_clock</sprite>
@@ -72,6 +78,7 @@
       <sprite>sprites\spr_button</sprite>
       <sprite>sprites\spr_press</sprite>
       <sprite>sprites\spr_reset</sprite>
+      <sprite>sprites\spr_config</sprite>
     </sprites>
     <sprite>sprites\spr_spark</sprite>
     <sprite>sprites\spr_bg</sprite>
@@ -83,6 +90,11 @@
     <sprite>sprites\spr_logo_ds</sprite>
     <sprite>sprites\spr_logo_jj</sprite>
     <sprite>sprites\spr_logo</sprite>
+    <sprite>sprites\spr_how</sprite>
+    <sprites name="group">
+      <sprite>sprites\spr_bgmon</sprite>
+      <sprite>sprites\spr</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -115,6 +127,7 @@
       <object>objects\o_p1arrow</object>
       <object>objects\o_p2arrow</object>
       <object>objects\o_reset</object>
+      <object>objects\object28</object>
     </objects>
     <object>objects\o_bg</object>
     <object>objects\o_retry</object>
@@ -128,12 +141,14 @@
     <object>objects\o_jj</object>
     <object>objects\obj_fade</object>
     <object>objects\start</object>
+    <object>objects\o_how</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
-    <room>rooms\room3</room>
+    <room>rooms\rm_logo</room>
     <room>rooms\room0</room>
-    <room>rooms\room1</room>
+    <room>rooms\rm_option</room>
+    <room>rooms\rm_end</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
