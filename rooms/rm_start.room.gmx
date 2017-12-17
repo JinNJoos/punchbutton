@@ -32,7 +32,42 @@ ini_close();
 globalvar s_music; s_music= audio_emitter_create();
 globalvar s_sound; s_sound= audio_emitter_create();
 audio_emitter_gain(s_music,bgm);
-audio_emitter_gain(s_sound,sfx);</code>
+audio_emitter_gain(s_sound,sfx);
+
+    achievement_login();
+        GoogleMobileAds_Init("");
+    if os_type = os_android{
+    ACH_PUNCH_1  = 'ACH_BONUS_1';
+    ACH_ROUND_5 = 'ACH_BONUS_2';
+    ACH_WIN_1 = 'ACH_BONUS_3';
+    ACH_RAPID_5 = 'ACH_BOSS_4';
+    ACH_BONUS_BAR = 'ACH_BONUS_5';
+    ACH_PUNCH_100 = 'ACH_BONUS_6';
+    ACH_ROUND_10 = 'ACH_BONUS_7';
+    ACH_RAPID_10 = 'ACH_BOSS_8';
+    ACH_BONUS_2P = 'ACH_BONUS_9';
+    ACH_PUNCH_1000 = 'ACH_BONUS_10';
+    ACH_ROUND_15 = 'ACH_BONUS_11';
+    ACH_BONUS_4 = 'ACH_BOSS_12';
+    ACH_RAPID_15 = 'ACH_BONUS_13';
+    ACH_BONUDS_AD = 'ACH_BONUS_14';
+    }
+    if os_type = os_ios{
+    ACH_PUNCH_1  = 'ACH_BONUS_1';
+    ACH_ROUND_5 = 'ACH_BONUS_2';
+    ACH_WIN_1 = 'ACH_BONUS_3';
+    ACH_RAPID_5 = 'ACH_BOSS_4';
+    ACH_BONUS_BAR = 'ACH_BONUS_5';
+    ACH_PUNCH_100 = 'ACH_BONUS_6';
+    ACH_ROUND_10 = 'ACH_BONUS_7';
+    ACH_RAPID_10 = 'ACH_BOSS_8';
+    ACH_BONUS_2P = 'ACH_BONUS_9';
+    ACH_PUNCH_1000 = 'ACH_BONUS_10';
+    ACH_ROUND_15 = 'ACH_BONUS_11';
+    ACH_BONUS_4 = 'ACH_BOSS_12';
+    ACH_RAPID_15 = 'ACH_BONUS_13';
+    ACH_BONUDS_AD = 'ACH_BONUS_14';    
+    }</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -74,6 +109,7 @@ audio_emitter_gain(s_sound,sfx);</code>
   </views>
   <instances>
     <instance objName="start" x="320" y="288" name="inst_145E5265" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_parent" x="64" y="480" name="inst_AF3EA625" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

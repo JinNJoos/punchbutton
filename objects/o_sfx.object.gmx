@@ -51,8 +51,8 @@
             <string>var i = 0;repeat(4){
     if device_mouse_check_button_pressed(i,mb_left)
     and point_in_rectangle(device_mouse_x(i),device_mouse_y(i),bbox_left,bbox_top,bbox_right,bbox_bottom) {
-          if sfx =.8{sfx=.8;exit;}
-          if sfx =0{sfx=1;exit;}
+          if sfx =.8{sfx=0;exit;}
+          if sfx =0{sfx=0.8;exit;}
     }
     i ++;
 }

@@ -48,17 +48,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var i = 0;repeat(4){
+            <string>audio_emitter_gain(s_music,bgm);
+if bgm = 1{image_index = 1;}
+if bgm = 0{image_index = 0;}
+var i = 0;repeat(5){
     if device_mouse_check_button_pressed(i,mb_left)
     and point_in_rectangle(device_mouse_x(i),device_mouse_y(i),bbox_left,bbox_top,bbox_right,bbox_bottom) {
-          if bgm =1{bgm=1;exit;}
+          if bgm =1{bgm=0;exit;}
           if bgm =0{bgm=1;exit;}
     }
     i ++;
 }
-audio_emitter_gain(s_music,bgm);
-if bgm = 1{image_index = 1;}
-if bgm = 0{image_index = 0;}
+
 </string>
           </argument>
         </arguments>

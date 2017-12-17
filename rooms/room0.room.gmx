@@ -67,6 +67,7 @@
     <instance objName="o_jj" x="260" y="130" name="inst_BF5CDAAF" locked="0" code="" scaleX="0.25" scaleY="0.25" colour="4294967295" rotation="0"/>
     <instance objName="o_logo" x="100" y="10" name="inst_0CDF198C" locked="0" code="" scaleX="0.349999994039536" scaleY="0.349999994039536" colour="4294967295" rotation="0"/>
     <instance objName="o_menu" x="10" y="10" name="inst_4ACFE5FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_ad" x="100" y="160" name="inst_601896DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

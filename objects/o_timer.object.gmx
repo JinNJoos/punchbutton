@@ -66,6 +66,7 @@ aspect_ratio = 9/16
           <argument>
             <kind>1</kind>
             <string>//Randomize the prompt
+instance_activate_object(o_ad);
 if (global.action = "wait")
 {
     global.action = choose("quick","rapid","gauge");
