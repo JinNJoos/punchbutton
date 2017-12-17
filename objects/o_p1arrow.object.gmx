@@ -83,12 +83,12 @@
     if (mode = "move")
     {
         mode = "press";
-        audio_play_sound(f_set,1,false);
+        audio_play_sound_on(s_sound,f_set,false,10);
         if (o_gauge.strength &gt; 90)
         {
             o_player1.dmg = 0;
             o_player1.mode = "Fault";
-            audio_play_sound(f_p1hurt1,1,false);
+            audio_play_sound_on(s_sound,o_player1.va_hurt1,false,10);
         }
         if (o_gauge.strength &lt;= 10)
         {
@@ -100,7 +100,7 @@
         {
             o_player1.dmg = round(o_gauge.strength/4);
             o_player1.mode = "Charge";
-            audio_play_sound(f_p1charge,1,false);
+            audio_play_sound_on(s_sound,o_player1.va_charge,false,10);
         }
     }
 }

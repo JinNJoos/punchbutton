@@ -4,10 +4,54 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-1001</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>menu = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if os_browser != browser_not_a_browser{window_set_size(browser_width, browser_height);}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -28,7 +72,18 @@
             <string>var i = 0;repeat(5){
     if device_mouse_check_button_pressed(i,mb_left)
     and point_in_rectangle(device_mouse_x(0),device_mouse_y(0),bbox_left,bbox_top,bbox_right,bbox_bottom) {
-          room_restart();
+          if !menu{
+            room_persistent = true;
+            room_goto(rm_config);
+            menu= true;
+            exit;
+            }
+          if menu{
+            room_set_persistent(room0,false);
+            room_goto(room0);
+            menu = false;
+            exit;
+            }
     }
     i ++;
 }

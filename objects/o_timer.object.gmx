@@ -69,7 +69,7 @@ aspect_ratio = 9/16
 if (global.action = "wait")
 {
     global.action = choose("quick","rapid","gauge");
-    audio_play_sound(f_action,1,false);
+    audio_play_sound_on(s_sound,f_action,false,10);
     if (global.action = "quick")
     {
         alarm[0] = 30-level;
@@ -135,9 +135,9 @@ else if (global.action = "quick")
         o_player2.mode = "Strike";
         o_player1.alarm[0] = 50;
         o_player2.alarm[0] = 50;
-        audio_play_sound(choose(f_p1strike1,f_p1strike2),1,false);
-        audio_play_sound(choose(f_p2strike1,f_p2strike2),1,false);
-        audio_play_sound(choose(f_punch5,f_punch6),1,false);
+        audio_play_sound_on(s_sound,choose(o_player1.va_strike1,o_player1.va_strike2),false,10);
+        audio_play_sound_on(s_sound,choose(o_player2.va_strike2,o_player2.va_strike2),false,10);
+        audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
         shake = 8;
     }
     if (o_player1.dmg &gt; o_player2.dmg)
@@ -147,7 +147,7 @@ else if (global.action = "quick")
             mode = "Strike"
             image_index = 0;
             alarm[0] = 50;
-            audio_play_sound(choose(f_p1strike1,f_p1strike2),1,false);
+            audio_play_sound_on(s_sound,choose(o_player1.va_strike1,o_player1.va_strike2),false,10);
         }
         with (o_player2)
         {
@@ -160,8 +160,8 @@ else if (global.action = "quick")
                 motion_add(0,3);
                 image_index = 0;
                 alarm[0] = 50;
-                audio_play_sound(choose(f_p2hurt1,f_p2hurt2,f_p2hurt3),1,false);
-                audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                audio_play_sound_on(s_sound,choose(o_player2.va_hurt1,o_player2.va_hurt2,o_player2.va_hurt3),false,10);
+                audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                 with (o_timer)
                 {
                     shake = 6;
@@ -177,8 +177,8 @@ else if (global.action = "quick")
                 motion_add(0,4);
                 image_index = 0;
                 alarm[0] = 50;
-                audio_play_sound(choose(f_p2hurt1,f_p2hurt2,f_p2hurt3),1,false);
-                audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                audio_play_sound_on(s_sound,choose(o_player1.va_hurt1,o_player1.va_hurt2,o_player1.va_hurt3),false,10);
+                audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                 with (o_timer)
                 {
                     shake = 10;
@@ -193,7 +193,7 @@ else if (global.action = "quick")
                 motion_add(0,2);
                 image_index = 0;
                 alarm[0] = 50;
-                audio_play_sound(f_guard,1,false);
+                audio_play_sound_on(s_sound,f_guard,false,10);
             }
         }
     }
@@ -204,7 +204,7 @@ else if (global.action = "quick")
             mode = "Strike"
             image_index = 0;
             alarm[0] = 50;
-            audio_play_sound(choose(f_p2strike1,f_p2strike2),1,false);
+            audio_play_sound_on(s_sound,choose(o_player2.va_strike1,o_player2.va_strike2),false,10);
         }
         with (o_player1)
         {
@@ -217,8 +217,8 @@ else if (global.action = "quick")
                 motion_add(180,3);
                 image_index = 0;
                 alarm[0] = 50;
-                audio_play_sound(choose(f_p1hurt1,f_p1hurt2,f_p1hurt3),1,false);
-                audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                audio_play_sound_on(s_sound,choose(o_player1.va_hurt1,o_player1.va_hurt2,o_player1.va_hurt3),false,10);
+                audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                 with (o_timer)
                 {
                     shake = 6;
@@ -233,8 +233,8 @@ else if (global.action = "quick")
                 motion_add(180,4);
                 image_index = 0;
                 alarm[0] = 50;
-                audio_play_sound(choose(f_p1hurt1,f_p1hurt2,f_p1hurt3),1,false);
-                audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                audio_play_sound_on(s_sound,choose(o_player1.va_hurt1,o_player1.va_hurt2,o_player1.va_hurt3),false,10);
+                audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                 with (o_timer)
                 {
                     shake = 10;
@@ -249,7 +249,7 @@ else if (global.action = "quick")
                 motion_add(180,2);
                 image_index = 0;
                 alarm[0] = 50;
-                audio_play_sound(f_guard,1,false);
+                audio_play_sound_on(s_sound,f_guard,false,10);
             }
         }
     }
@@ -273,25 +273,25 @@ else if (global.action = "rapid")
         o_player1.alarm[0] = 50;
         o_player2.alarm[0] = 50;
         shake = 8;
-        if (audio_is_playing(f_p1ora1))
+        if (audio_is_playing(o_player1.va_rapid1))
         {
-            audio_stop_sound(f_p1ora1);
+            audio_stop_sound(o_player1.va_rapid1);
         }
-        if (audio_is_playing(f_p1ora2))
+        if (audio_is_playing(o_player1.va_rapid2))
         {
-            audio_stop_sound(f_p1ora2);
+            audio_stop_sound(o_player1.va_rapid2);
         }
-        if (audio_is_playing(f_p2muda1))
+        if (audio_is_playing(o_player2.va_rapid1))
         {
-            audio_stop_sound(f_p2muda1);
+            audio_stop_sound(o_player2.va_rapid1);
         }
-        if (audio_is_playing(f_p2muda2))
+        if (audio_is_playing(o_player2.va_rapid2))
         {
-            audio_stop_sound(f_p2muda2);
+            audio_stop_sound(o_player2.va_rapid2);
         }
-        audio_play_sound(f_p1ora3,1,false);
-        audio_play_sound(f_p2muda3,1,false);
-        audio_play_sound(choose(f_punch5,f_punch6),1,false);
+        audio_play_sound_on(s_sound,o_player1.va_rapid3,false,10);
+        audio_play_sound_on(s_sound,o_player2.va_rapid3,false,10);
+        audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
     }
     if (o_player1.dmg &gt; o_player2.dmg)
     {
@@ -300,25 +300,25 @@ else if (global.action = "rapid")
             mode = "Strike"
             image_index = 0;
             alarm[0] = 50;
-            if (audio_is_playing(f_p1ora1))
+            if (audio_is_playing(o_player1.va_rapid1))
             {
-                audio_stop_sound(f_p1ora1);
+                audio_stop_sound(o_player1.va_rapid1);
             }
-            if (audio_is_playing(f_p1ora2))
+            if (audio_is_playing(o_player1.va_rapid2))
             {
-                audio_stop_sound(f_p1ora2);
+                audio_stop_sound(o_player1.va_rapid2);
             }
-            audio_play_sound(f_p1ora3,1,false);
+            audio_play_sound_on(s_sound,o_player1.va_rapid3,false,10);
         }
         with (o_player2)
         {
-            if (audio_is_playing(f_p2muda1))
+            if (audio_is_playing(o_player2.va_rapid1))
             {
-                audio_stop_sound(f_p2muda1);
+                audio_stop_sound(o_player2.va_rapid1);
             }
-            if (audio_is_playing(f_p2muda2))
+            if (audio_is_playing(o_player2.va_rapid2))
             {
-                audio_stop_sound(f_p2muda2);
+                audio_stop_sound(o_player2.va_rapid2);
             }
             if (mode = "Punch")
             or (mode = "Spam")
@@ -330,8 +330,8 @@ else if (global.action = "rapid")
                 hp -= o_player1.dmg;
                 damage.dmg = o_player1.dmg;
                 alarm[0] = 50;
-                audio_play_sound(choose(f_p2hurt1,f_p2hurt2,f_p2hurt3),1,false);
-                audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                audio_play_sound_on(s_sound,choose(o_player2.va_hurt1,o_player2.va_hurt2,o_player2.va_hurt3),false,10);
+                audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                 with (o_timer)
                 {
                     shake = 6;
@@ -346,8 +346,8 @@ else if (global.action = "rapid")
                 hp -= round(o_player1.dmg*1.5);
                 damage.dmg = round(o_player1.dmg*1.5);
                 alarm[0] = 50;
-                audio_play_sound(choose(f_p2hurt1,f_p2hurt2,f_p2hurt3),1,false);
-                audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                audio_play_sound_on(s_sound,choose(o_player2.va_hurt1,o_player2.va_hurt2,o_player2.va_hurt3),false,10);
+                audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                 with (o_timer)
                 {
                     shake = 10;
@@ -362,7 +362,7 @@ else if (global.action = "rapid")
                 hp -= round(o_player1.dmg/2);
                 damage.dmg = round(o_player1.dmg/2);
                 alarm[0] = 50;
-                audio_play_sound(f_guard,1,false);
+                audio_play_sound_on(s_sound,f_guard,false,10);
             }
         }
     }
@@ -373,25 +373,25 @@ else if (global.action = "rapid")
             mode = "Strike"
             image_index = 0;
             alarm[0] = 50;
-            if (audio_is_playing(f_p2muda1))
+            if (audio_is_playing(o_player2.va_rapid1))
             {
-                audio_stop_sound(f_p2muda1);
+                audio_stop_sound(o_player2.va_rapid1);
             }
-            if (audio_is_playing(f_p2muda2))
+            if (audio_is_playing(o_player2.va_rapid2))
             {
-                audio_stop_sound(f_p2muda2);
+                audio_stop_sound(o_player2.va_rapid2);
             }
-            audio_play_sound(f_p2muda3,1,false);
+            audio_play_sound_on(s_sound,o_player2.va_rapid3,false,10);
         }
         with (o_player1)
         {
-            if (audio_is_playing(f_p1ora1))
+            if (audio_is_playing(o_player1.va_rapid1))
             {
-                audio_stop_sound(f_p1ora1);
+                audio_stop_sound(o_player1.va_rapid1);
             }
-            if (audio_is_playing(f_p1ora2))
+            if (audio_is_playing(o_player1.va_rapid2))
             {
-                audio_stop_sound(f_p1ora2);
+                audio_stop_sound(o_player1.va_rapid2);
             }
             if (mode = "Punch")
             or (mode = "Spam")
@@ -403,8 +403,8 @@ else if (global.action = "rapid")
                 hp -= o_player2.dmg;
                 damage.dmg = o_player2.dmg;
                 alarm[0] = 50;
-                audio_play_sound(choose(f_p1hurt1,f_p1hurt2,f_p1hurt3),1,false);
-                audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                audio_play_sound_on(s_sound,choose(o_player1.va_hurt1,o_player1.va_hurt2,o_player1.va_hurt3),false,10);
+                audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                 with (o_timer)
                 {
                     shake = 6;
@@ -419,8 +419,8 @@ else if (global.action = "rapid")
                 hp -= round(o_player2.dmg*1.5);
                 damage.dmg = round(o_player2.dmg*1.5);
                 alarm[0] = 50;
-                audio_play_sound(choose(f_p1hurt1,f_p1hurt2,f_p1hurt3),1,false);
-                audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                audio_play_sound_on(s_sound,choose(o_player1.va_hurt1,o_player1.va_hurt2,o_player1.va_hurt3),false,10);
+                audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                 with (o_timer)
                 {
                     shake = 10;
@@ -435,7 +435,7 @@ else if (global.action = "rapid")
                 hp -= round(o_player2.dmg/2);
                 damage.dmg = round(o_player2.dmg/2);
                 alarm[0] = 50;
-                audio_play_sound(f_guard,1,false);
+                audio_play_sound_on(s_sound,f_guard,false,10);
             }
         }
     }
@@ -468,9 +468,9 @@ else if (global.action = "gauge")
         {
             audio_stop_sound(f_p2charge)
         }
-        audio_play_sound(f_p1strike3,1,false);
-        audio_play_sound(f_p2strike3,1,false);
-        audio_play_sound(choose(f_punch5,f_punch6),1,false);
+        audio_play_sound_on(s_sound,o_player1.va_strike3,false,10);
+        audio_play_sound_on(s_sound,o_player2.va_strike3,false,10);
+        audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
     }
     if (o_p1arrow.y &lt; o_p2arrow.y)
     {
@@ -485,7 +485,7 @@ else if (global.action = "gauge")
                 {
                     audio_stop_sound(f_p1charge)
                 }
-                audio_play_sound(f_p1strike3,1,false);
+                audio_play_sound_on(s_sound,o_player1.va_strike3,false,10);
                 with (o_player2)
                 {
                     if (mode = "Pose")
@@ -502,8 +502,8 @@ else if (global.action = "gauge")
                         {
                             audio_stop_sound(f_p2charge)
                         }
-                        audio_play_sound(choose(f_p2hurt1,f_p2hurt2,f_p2hurt3),1,false);
-                        audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                        audio_play_sound_on(s_sound,choose(o_player2.va_hurt1,o_player2.va_hurt2,o_player2.va_hurt3),false,10);
+                        audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                         with (o_timer)
                         {
                             shake = 6;
@@ -518,8 +518,8 @@ else if (global.action = "gauge")
                         hp -= round(o_player1.dmg*1.5);
                         damage.dmg = round(o_player1.dmg*1.5);
                         alarm[0] = 50;
-                        audio_play_sound(choose(f_p2hurt1,f_p2hurt2,f_p2hurt3),1,false);
-                        audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                        audio_play_sound_on(s_sound,choose(o_player2.va_hurt1,o_player2.va_hurt2,o_player2.va_hurt3),false,10);
+                        audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                         with (o_timer)
                         {
                             shake = 10;
@@ -534,7 +534,7 @@ else if (global.action = "gauge")
                         hp -= round(o_player1.dmg/2);
                         damage.dmg = round(o_player1.dmg/2);
                         alarm[0] = 50;
-                        audio_play_sound(f_guard,1,false);
+                        audio_play_sound_on(s_sound,f_guard,false,10);
                     }
                 }
             }
@@ -551,7 +551,7 @@ else if (global.action = "gauge")
                         {
                             audio_stop_sound(f_p2charge)
                         }
-                        audio_play_sound(f_p2strike3,1,false);
+                        audio_play_sound_on(s_sound,o_player2.va_strike3,false,10);
                         with (o_player1)
                         {
                             mode = "Hurt";
@@ -561,8 +561,8 @@ else if (global.action = "gauge")
                             hp -= round(o_player2.dmg*1.5);
                             damage.dmg = round(o_player2.dmg*1.5);
                             alarm[0] = 50;
-                            audio_play_sound(choose(f_p1hurt1,f_p1hurt2,f_p1hurt3),1,false);
-                            audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                            audio_play_sound_on(s_sound,choose(o_player1.va_hurt1,o_player1.va_hurt2,o_player1.va_hurt3),false,10);
+                            audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                             with (o_timer)
                             {
                                 shake = 10;
@@ -575,9 +575,9 @@ else if (global.action = "gauge")
                         o_player2.mode = "Strike";
                         o_player1.alarm[0] = 50;
                         o_player2.alarm[0] = 50;
-                        audio_play_sound(choose(f_p1strike1,f_p1strike2),1,false);
-                        audio_play_sound(choose(f_p2strike1,f_p2strike2),1,false);
-                        audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                        audio_play_sound_on(s_sound,choose(o_player1.va_strike1,o_player1.va_strike2),false,10);
+                        audio_play_sound_on(s_sound,choose(o_player2.va_strike1,o_player2.va_strike2),false,10);
+                        audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                         with (o_timer)
                         {
                             shake = 8;
@@ -589,7 +589,7 @@ else if (global.action = "gauge")
                         o_player2.mode = "Guard";
                         o_player1.alarm[0] = 50;
                         o_player2.alarm[0] = 50;
-                        audio_play_sound(f_guard,1,false);
+                        audio_play_sound_on(s_sound,f_guard,false,10);
                     }
                 }
             }
@@ -606,7 +606,7 @@ else if (global.action = "gauge")
                         {
                             audio_stop_sound(f_p2charge)
                         }
-                        audio_play_sound(f_p2strike3,1,false);
+                        audio_play_sound_on(s_sound,o_player2.va_strike3,false,10);
                         with (o_player1)
                         {
                             mode = "Hurt";
@@ -616,8 +616,8 @@ else if (global.action = "gauge")
                             hp -= o_player2.dmg;
                             damage.dmg = o_player2.dmg;
                             alarm[0] = 50;
-                            audio_play_sound(choose(f_p1hurt1,f_p1hurt2,f_p1hurt3),1,false);
-                            audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                            audio_play_sound_on(s_sound,choose(o_player1.va_hurt1,o_player1.va_hurt2,o_player1.va_hurt3),false,10);
+                            audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                             with (o_timer)
                             {
                                 shake = 6;
@@ -630,7 +630,7 @@ else if (global.action = "gauge")
                         o_player2.mode = "Guard";
                         o_player1.alarm[0] = 50;
                         o_player2.alarm[0] = 50;
-                        audio_play_sound(f_guard,1,false);
+                        audio_play_sound_on(s_sound,f_guard,false,10);
                     }
                     if (mode = "Defend")
                     {
@@ -638,7 +638,7 @@ else if (global.action = "gauge")
                         o_player2.mode = "Guard";
                         o_player1.alarm[0] = 50;
                         o_player2.alarm[0] = 50;
-                        audio_play_sound(f_guard,1,false);
+                        audio_play_sound_on(s_sound,f_guard,false,10);
                     }
                 }
             }
@@ -657,7 +657,7 @@ else if (global.action = "gauge")
                 {
                     audio_stop_sound(f_p2charge)
                 }
-                audio_play_sound(f_p2strike3,1,false);
+                audio_play_sound_on(s_sound,o_player2.va_strike3,false,10);
                 with (o_player1)
                 {
                     if (mode = "Pose")
@@ -674,8 +674,8 @@ else if (global.action = "gauge")
                         {
                             audio_stop_sound(f_p1charge)
                         }
-                        audio_play_sound(choose(f_p1hurt1,f_p1hurt2,f_p1hurt3),1,false);
-                        audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                        audio_play_sound_on(s_sound,choose(o_player1.va_hurt1,o_player1.va_hurt2,o_player1.va_hurt3),false,10);
+                        audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                         with (o_timer)
                         {
                             shake = 6;
@@ -690,8 +690,8 @@ else if (global.action = "gauge")
                         hp -= round(o_player2.dmg*1.5);
                         damage.dmg = round(o_player2.dmg*1.5);
                         alarm[0] = 50;
-                        audio_play_sound(choose(f_p1hurt1,f_p1hurt2,f_p1hurt3),1,false);
-                        audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                        audio_play_sound_on(s_sound,choose(o_player1.va_hurt1,o_player1.va_hurt2,o_player1.va_hurt3),false,10);
+                        audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                         with (o_timer)
                         {
                             shake = 10;
@@ -706,7 +706,7 @@ else if (global.action = "gauge")
                         hp -= round(o_player2.dmg/2);
                         damage.dmg = round(o_player2.dmg/2);
                         alarm[0] = 50;
-                        audio_play_sound(f_guard,1,false);
+                        audio_play_sound_on(s_sound,f_guard,false,10);
                     }
                 }
             }
@@ -723,7 +723,7 @@ else if (global.action = "gauge")
                         {
                             audio_stop_sound(f_p1charge)
                         }
-                        audio_play_sound(f_p1strike3,1,false);
+                        audio_play_sound_on(s_sound,o_player1.va_strike3,false,10);
                         with (o_player2)
                         {
                             mode = "Hurt";
@@ -733,8 +733,8 @@ else if (global.action = "gauge")
                             hp -= round(o_player1.dmg*1.5);
                             damage.dmg = round(o_player1.dmg*1.5);
                             alarm[0] = 50;
-                            audio_play_sound(choose(f_p2hurt1,f_p2hurt2,f_p2hurt3),1,false);
-                            audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                            audio_play_sound_on(s_sound,choose(o_player2.va_hurt1,o_player2.va_hurt2,o_player2.va_hurt3),false,10);
+                            audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                             with (o_timer)
                             {
                                 shake = 10;
@@ -747,9 +747,9 @@ else if (global.action = "gauge")
                         o_player2.mode = "Strike";
                         o_player1.alarm[0] = 50;
                         o_player2.alarm[0] = 50;
-                        audio_play_sound(choose(f_p1strike1,f_p1strike2),1,false);
-                        audio_play_sound(choose(f_p2strike1,f_p2strike2),1,false);
-                        audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                        audio_play_sound_on(s_sound,choose(o_player1.va_strike1,o_player1.va_strike2),false,10);
+                        audio_play_sound_on(s_sound,choose(o_player2.va_strike1,o_player2.va_strike2),false,10);
+                        audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                         with (o_timer)
                         {
                             shake = 8;
@@ -761,7 +761,7 @@ else if (global.action = "gauge")
                         o_player2.mode = "Guard";
                         o_player1.alarm[0] = 50;
                         o_player2.alarm[0] = 50;
-                        audio_play_sound(f_guard,1,false);
+                        audio_play_sound_on(s_sound,f_guard,false,10);
                     }
                 }
             }
@@ -778,7 +778,7 @@ else if (global.action = "gauge")
                         {
                             audio_stop_sound(f_p1charge)
                         }
-                        audio_play_sound(f_p1strike3,1,false);
+                        audio_play_sound_on(s_sound,o_player1.va_strike3,false,10);
                         with (o_player2)
                         {
                             mode = "Hurt";
@@ -788,8 +788,8 @@ else if (global.action = "gauge")
                             hp -= round(o_player1.dmg);
                             damage.dmg = round(o_player1.dmg);
                             alarm[0] = 50;
-                            audio_play_sound(choose(f_p2hurt1,f_p2hurt2,f_p2hurt3),1,false);
-                            audio_play_sound(choose(f_punch5,f_punch6),1,false);
+                            audio_play_sound_on(s_sound,choose(o_player2.va_hurt1,o_player2.va_hurt2,o_player2.va_hurt3),false,10);
+                            audio_play_sound_on(s_sound,choose(f_punch5,f_punch6),false,10);
                             with (o_timer)
                             {
                                 shake = 6;
@@ -802,7 +802,7 @@ else if (global.action = "gauge")
                         o_player2.mode = "Guard";
                         o_player1.alarm[0] = 50;
                         o_player2.alarm[0] = 50;
-                        audio_play_sound(f_guard,1,false);
+                        audio_play_sound_on(s_sound,f_guard,false,10);
                     }
                     if (mode = "Defend")
                     {
@@ -810,7 +810,7 @@ else if (global.action = "gauge")
                         o_player2.mode = "Guard";
                         o_player1.alarm[0] = 50;
                         o_player2.alarm[0] = 50;
-                        audio_play_sound(f_guard,1,false);
+                        audio_play_sound_on(s_sound,f_guard,false,10);
                     }
                 }
             }

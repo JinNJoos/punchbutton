@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(choose(f_punch1,f_punch2,f_punch3,f_punch4),1,false);
+            <string>audio_play_sound_on(s_sound,choose(f_punch1,f_punch2,f_punch3,f_punch4),false,10);
 with (o_timer)
 {
     shake = 1;

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -55,7 +55,7 @@ scr_costume();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(room1);
+            <string>room_goto(rm_end);
 </string>
           </argument>
         </arguments>
@@ -203,6 +203,7 @@ if (hp &lt;= 25 &amp;&amp; hp &gt; 0)
 if (hp &lt;= 0)
 {
     image_alpha -= 0.025;
+    image_alpha = clamp(image_alpha,0,1);
     if not (mode = "K.O.")
     {
         hp = 0;
@@ -212,8 +213,8 @@ if (hp &lt;= 0)
         global.action = "over";
         alarm[2] = 150;
         room_speed = 30;
-        audio_play_sound(f_p1dead,1,false);
-        audio_play_sound(choose(f_punch7,f_punch8),1,false);
+        audio_play_sound_on(s_sound,va_dead,false,10);
+        audio_play_sound_on(s_sound,choose(f_punch7,f_punch8),false,10);
     }
 }
 </string>
@@ -308,12 +309,6 @@ or (mode = "Punch")
 {
     alarm[1] = 10;
 }
-/*if (mode = "Press A")
-{
-    mode = "Ready";
-    audio_play_sound(f_ready,1,false);
-    audio_play_sound(f_p1ready,1,false);
-}*/
 </string>
           </argument>
         </arguments>
@@ -349,7 +344,7 @@ or (mode = "Punch")
     }
     dmg += 1;
     mode = "Punch";
-    audio_play_sound(f_p1ora1,1,false);
+    audio_play_sound_on(s_sound,va_rapid1,false,10);
 }
 else if (mode = "Punch")
 {
@@ -363,9 +358,9 @@ else if (mode = "Punch")
         instance_create(x+lengthdir_x(80,direction),y+lengthdir_y(80,direction),o_spark);
     }
     dmg += 1;
-    if not(audio_is_playing(f_p1ora1))
+    if not(audio_is_playing(va_rapid1))
     {
-        audio_play_sound(f_p1ora2,1,false);
+        audio_play_sound_on(s_sound,va_rapid2,false,10);
     }
 }
 if (mode = "Block")

@@ -27,10 +27,11 @@
             <kind>1</kind>
             <string>image_speed = 0;
 image_xscale = -1;
-if (room = room1)
+if (room = rm_end)
 {
     mode = "not";
 }
+if os_browser != browser_not_a_browser{sprite_index = spr_L;}
 </string>
           </argument>
         </arguments>
@@ -66,12 +67,12 @@ var i = 0;repeat(4){
 if (keyboard_check(ord("L"))) and players =2
 {
     image_index = 1;
-    if (room = room1)
+    if (room = rm_end)
     {
         if (mode = "not")
         {
             mode = "ready";
-            audio_play_sound(f_set,1,false);
+            audio_play_sound_on(s_sound,f_set,false,10);
         }
     }
 }

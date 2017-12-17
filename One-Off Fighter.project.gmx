@@ -45,6 +45,34 @@
       <sound>sound\f_p2strike3</sound>
       <sound>sound\f_p2ready</sound>
     </sounds>
+    <sounds name="bxr">
+      <sound>sound\f_bxr_dead</sound>
+      <sound>sound\f_bxr_charge</sound>
+      <sound>sound\f_bxr_hurt1</sound>
+      <sound>sound\f_bxr_hurt2</sound>
+      <sound>sound\f_bxr_hurt3</sound>
+      <sound>sound\f_bxr_rapid1</sound>
+      <sound>sound\f_bxr_rapid2</sound>
+      <sound>sound\f_bxr_rapid3</sound>
+      <sound>sound\f_bxr_strike1</sound>
+      <sound>sound\f_bxr_strike2</sound>
+      <sound>sound\f_bxr_strike3</sound>
+      <sound>sound\f_bxr_ready</sound>
+    </sounds>
+    <sounds name="ufc">
+      <sound>sound\f_ufc_dead</sound>
+      <sound>sound\f_ufc_charge</sound>
+      <sound>sound\f_ufc_hurt1</sound>
+      <sound>sound\f_ufc_hurt2</sound>
+      <sound>sound\f_ufc_hurt3</sound>
+      <sound>sound\f_ufc_rapid1</sound>
+      <sound>sound\f_ufc_rapid2</sound>
+      <sound>sound\f_ufc_rapid3</sound>
+      <sound>sound\f_ufc_strike1</sound>
+      <sound>sound\f_ufc_strike2</sound>
+      <sound>sound\f_ufc_strike3</sound>
+      <sound>sound\f_ufc_ready</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player 1">
@@ -79,6 +107,8 @@
       <sprite>sprites\spr_press</sprite>
       <sprite>sprites\spr_reset</sprite>
       <sprite>sprites\spr_config</sprite>
+      <sprite>sprites\spr_A</sprite>
+      <sprite>sprites\spr_L</sprite>
     </sprites>
     <sprite>sprites\spr_spark</sprite>
     <sprite>sprites\spr_bg</sprite>
@@ -92,8 +122,9 @@
     <sprite>sprites\spr_logo</sprite>
     <sprite>sprites\spr_how</sprite>
     <sprites name="group">
-      <sprite>sprites\spr_bgmon</sprite>
-      <sprite>sprites\spr</sprite>
+      <sprite>sprites\spr_bgm</sprite>
+      <sprite>sprites\spr_sound</sprite>
+      <sprite>sprites\spr_credits</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -127,7 +158,10 @@
       <object>objects\o_p1arrow</object>
       <object>objects\o_p2arrow</object>
       <object>objects\o_reset</object>
-      <object>objects\object28</object>
+      <object>objects\o_menu</object>
+      <object>objects\o_bgm</object>
+      <object>objects\o_sfx</object>
+      <object>objects\o_credits</object>
     </objects>
     <object>objects\o_bg</object>
     <object>objects\o_retry</object>
@@ -147,6 +181,7 @@
     <room>rooms\rm_start</room>
     <room>rooms\rm_logo</room>
     <room>rooms\room0</room>
+    <room>rooms\rm_config</room>
     <room>rooms\rm_option</room>
     <room>rooms\rm_end</room>
   </rooms>

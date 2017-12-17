@@ -28,31 +28,10 @@
             <string>var i = 0;repeat(5){
     if device_mouse_check_button_pressed(i,mb_left)
     and point_in_rectangle(device_mouse_x(0),device_mouse_y(0),bbox_left,bbox_top,bbox_right,bbox_bottom) {
-          room_restart();
+          game_restart();
     }
     i ++;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if os_browser != browser_not_a_browser{window_set_size(browser_width, browser_height);}
 </string>
           </argument>
         </arguments>

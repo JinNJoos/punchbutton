@@ -26,10 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-if (room = room1)
+if (room = rm_end)
 {
     mode = "not";
 }
+if os_browser != browser_not_a_browser{sprite_index = spr_A;}
 </string>
           </argument>
         </arguments>
@@ -63,12 +64,12 @@ if (room = room1)
 if (keyboard_check(ord("A")))
 {
     image_index = 1;
-    if (room = room1)
+    if (room = rm_end)
     {
         if (mode = "not")
         {
             mode = "ready";
-            audio_play_sound(f_set,1,false);
+            audio_play_sound_on(s_sound,f_set,false,10);
         }
     }
 }
