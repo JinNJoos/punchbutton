@@ -10,7 +10,8 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>surface_resize(application_surface,1920,1080);
+  <code>audio_stop_all();
+surface_resize(application_surface,1920,1080);
 if os_browser == browser_not_a_browser{window_set_size(1920, 1080);}
 //if os_browser != browser_not_a_browser{window_set_size(720, 480);}
 display_reset(8, true);
@@ -26,6 +27,7 @@ randomize();
 //Size
 globalvar system_device;system_device=os_device
 ini_open("config.ini");
+    globalvar hscore;hscore=ini_read_real('score','hscore',1000);
     globalvar bgm;bgm=ini_read_real('volume', 'bgm', 1);
     globalvar sfx;sfx=ini_read_real('volume', 'sfx', .8);
 ini_close();
@@ -33,9 +35,9 @@ globalvar s_music; s_music= audio_emitter_create();
 globalvar s_sound; s_sound= audio_emitter_create();
 audio_emitter_gain(s_music,bgm);
 audio_emitter_gain(s_sound,sfx);
-
+GoogleMobileAds_Init("ca-app-pub-3897066097468868/2462956591");
     achievement_login();
-        GoogleMobileAds_Init("");
+        
     if os_type = os_android{
     ACH_PUNCH_1  = 'ACH_BONUS_1';
     ACH_ROUND_5 = 'ACH_BONUS_2';

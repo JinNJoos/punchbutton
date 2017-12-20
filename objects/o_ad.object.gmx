@@ -50,6 +50,7 @@ alarm[0]=60;
           <argument>
             <kind>1</kind>
             <string>GoogleMobileAds_RemoveBanner();
+alarm[0]=600;
 </string>
           </argument>
         </arguments>
@@ -72,13 +73,14 @@ alarm[0]=60;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if os_type = os_android{
-    GoogleMobileAds_AddBannerAt("ca-app-pub-3897066097468868/2462956591", GoogleMobileAds_Banner, x, y);
-    }
-if os_type = os_ios{
-    GoogleMobileAds_AddBannerAt("ca-app-pub-3897066097468868/2462956591", GoogleMobileAds_Banner, x, y);
-    }
-alarm[1]=600;
+            <string>
+GoogleMobileAds_AddBannerAt("ca-app-pub-3897066097468868/2462956591", GoogleMobileAds_Banner, x, y)
+var bw = GoogleMobileAds_BannerGetWidth();
+var bh = GoogleMobileAds_BannerGetHeight();
+var px = (display_get_width()-bw)/2;
+var py = display_get_height()-bh;
+GoogleMobileAds_MoveBanner(px, py);
+alarm[1]= 1200;
 </string>
           </argument>
         </arguments>

@@ -25,14 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var i = 0;repeat(4){
+            <string>var i = 0;repeat(5){
     if device_mouse_check_button_pressed(i,mb_left)
     and point_in_rectangle(device_mouse_x(i),device_mouse_y(i),bbox_left,bbox_top,bbox_right,bbox_bottom) {
-          url_open_ext('http://dakrshotstudios.com', '_blank');
+          url_open_ext('http://darkshotstudios.com', '_blank');
     }
     i ++;
 }
-if !instance_exists(o_guide){instance_destroy();}
 </string>
           </argument>
         </arguments>

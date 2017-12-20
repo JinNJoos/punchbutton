@@ -157,6 +157,7 @@ else if (global.action = "quick")
                 damage = instance_create(x,y,obj_damage);
                 hp -= o_player1.dmg;
                 damage.dmg = o_player1.dmg;
+                score += o_player1.dmg;
                 mode = "Hurt";
                 motion_add(0,3);
                 image_index = 0;
@@ -329,6 +330,7 @@ else if (global.action = "rapid")
                 image_index = 0;
                 damage = instance_create(x,y,obj_damage);
                 hp -= o_player1.dmg;
+                score += o_player1.dmg;
                 damage.dmg = o_player1.dmg;
                 alarm[0] = 50;
                 audio_play_sound_on(s_sound,choose(o_player2.va_hurt1,o_player2.va_hurt2,o_player2.va_hurt3),false,10);
@@ -497,6 +499,7 @@ else if (global.action = "gauge")
                         image_index = 0;
                         damage = instance_create(x,y,obj_damage);
                         hp -= o_player1.dmg;
+                        score += o_player1.dmg;
                         damage.dmg = o_player1.dmg;
                         alarm[0] = 50;
                         if (audio_is_playing(f_p2charge))

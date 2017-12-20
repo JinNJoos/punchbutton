@@ -75,6 +75,7 @@
       <sound>sound\f_ufc_strike3</sound>
       <sound>sound\f_ufc_ready</sound>
     </sounds>
+    <sound>sound\bgm_theme</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player 1">
@@ -127,12 +128,17 @@
       <sprite>sprites\spr_bgm</sprite>
       <sprite>sprites\spr_sound</sprite>
       <sprite>sprites\spr_credits</sprite>
+      <sprite>sprites\spr_htp</sprite>
     </sprites>
     <sprite>sprites\spr_ad</sprite>
+    <sprite>sprites\s_cred</sprite>
+    <sprite>sprites\spr_wins</sprite>
+    <sprite>sprites\spr_restart</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\background1</background>
+    <background>background\background2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -171,6 +177,7 @@
     <object>objects\o_guide</object>
     <object>objects\obj_damage</object>
     <object>objects\o_1player</object>
+    <object>objects\o_htp</object>
     <object>objects\o_2player</object>
     <object>objects\o_2cpu</object>
     <object>objects\o_ds</object>
@@ -180,11 +187,15 @@
     <object>objects\start</object>
     <object>objects\o_how</object>
     <object>objects\o_ad</object>
+    <object>objects\fx</object>
+    <object>objects\o_win</object>
+    <object>objects\o_restart</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
     <room>rooms\rm_logo</room>
     <room>rooms\room0</room>
+    <room>rooms\rm_how</room>
     <room>rooms\rm_config</room>
     <room>rooms\rm_option</room>
     <room>rooms\rm_end</room>

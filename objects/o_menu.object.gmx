@@ -82,6 +82,10 @@
             room_set_persistent(room0,false);
             room_goto(room0);
             menu = false;
+            ini_open("config.ini");
+            ini_write_real('volume','bgm',bgm);
+            ini_write_real('volume','sfx',sfx);
+        ini_close();
             exit;
             }
     }

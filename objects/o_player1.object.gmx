@@ -55,7 +55,23 @@ scr_costume();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_end);
+            <string>with o_timer{instance_destroy();}
+with o_p1button{instance_destroy();}
+with o_p2button{instance_destroy();}
+                        ini_open("config.ini");
+            ini_write_real('score','hscore',hscore);
+        ini_close();
+instance_destroy();
+with o_player2{
+    audio_play_sound_on(s_sound,va_charge,false,10);
+    instance_destroy();
+    instance_create(x,y,fx);
+    fx.sprite_index = rapid;
+    fx.image_xscale = image_xscale;
+    instance_create(40,20,o_win);
+    o_win.image_index = 1;
+    instance_create(100,130,o_restart);
+    }
 </string>
           </argument>
         </arguments>
@@ -272,6 +288,16 @@ if (hp &lt;= 0)
 if !instance_exists(o_guide){
 draw_rectangle_colour(140-100,20,140,40,c_black,c_black,c_black,c_black,false);
 draw_rectangle_colour(140-hp,20,140,40,bar,bar,bar,bar,false);}
+if players = 1{
+if score&gt;hscore{hscore=score;}
+score_show=string_format(score,7,0);
+score_show=string_replace_all(score_show,' ','0');
+draw_text_outline(80,10,score_show,c_white,c_black);
+
+score_show=string_format(hscore,7,0);
+score_show=string_replace_all(score_show,' ','0');
+draw_text_outline(280,10,score_show,c_white,c_black);
+}
 //draw_text(120,30,string(hp));
 </string>
           </argument>

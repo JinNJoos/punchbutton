@@ -62,8 +62,26 @@ until
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if players =2{room_goto(room1);}
+            <string>if players =2{
+with o_timer{instance_destroy();}
+with o_p1button{instance_destroy();}
+with o_p2button{instance_destroy();}
+instance_destroy();
+with o_player1{
+audio_play_sound_on(s_sound,va_charge,false,10);
+    instance_destroy();
+    instance_create(x,y,fx);
+    fx.sprite_index = rapid;
+    fx.image_xscale = image_xscale;
+    instance_create(40,20,o_win);
+    o_win.image_index = 0;
+    instance_create(100,130,o_restart);
+    }}
+
 if players =1{
+            ini_open("config.ini");
+            ini_write_real('score','hscore',hscore);
+        ini_close();
     instance_destroy();
     level ++;
     instance_create(xstart,ystart,o_player2);
@@ -223,6 +241,7 @@ image_alpha -= 0.025;
 image_alpha = clamp(image_alpha,0,1);
     if not (mode = "K.O.")
     {
+        score += 500;
         hp = 0;
         mode = "K.O.";
         bar = c_red;

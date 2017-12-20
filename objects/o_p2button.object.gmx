@@ -58,7 +58,7 @@ if os_browser != browser_not_a_browser{sprite_index = spr_L;}
 var i = 0;repeat(4){
     if device_mouse_check_button_pressed(i,mb_left)
     and players = 2
-    and point_in_rectangle(device_mouse_x(i),device_mouse_y(i),bbox_left,bbox_top,bbox_right,bbox_bottom) {
+    and point_in_rectangle(device_mouse_x(i),device_mouse_y(i),room_width-room_width/2,0,room_width,room_height) {
           keyboard_key_press(ord('L'));
           keyboard_key_release(ord('L'));
     }
@@ -111,7 +111,7 @@ if (keyboard_check_released(ord("L")))
     draw_set_color(c_black);
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
-    draw_text_outline(x-25,y,"Round  " + string(level),c_white,c_black);
+    draw_text_outline(x-20,y,"Round  " + string(level),c_white,c_black);
     }
 if players = 2{draw_self();}
 </string>
