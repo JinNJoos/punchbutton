@@ -399,9 +399,9 @@ if (mode = "Block")
             <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,colour,image_alpha);
 //draw_text(x,y-50,string(mode));
 //draw_text(x,y+50,string(dmg));
-if !instance_exists(o_guide){
+/*if !instance_exists(o_guide){
 draw_rectangle_color(180,20,180+100,40,c_black,c_black,c_black,c_black,false);
-draw_rectangle_color(180,20,180+hp,40,bar,bar,bar,bar,false);}
+draw_rectangle_color(180,20,180+hp,40,bar,bar,bar,bar,false);}*/
 //draw_text(200,30,string(hp));
 </string>
           </argument>

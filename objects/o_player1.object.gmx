@@ -285,7 +285,7 @@ if (hp &lt;= 0)
             <string>draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,colour,image_alpha);
 //draw_text(x,y-50,string(mode));
 //draw_text(x,y+50,string(dmg));
-if !instance_exists(o_guide){
+/*if !instance_exists(o_guide){
 draw_rectangle_colour(140-100,20,140,40,c_black,c_black,c_black,c_black,false);
 draw_rectangle_colour(140-hp,20,140,40,bar,bar,bar,bar,false);}
 if players = 1{
@@ -297,8 +297,31 @@ draw_text_outline(80,10,score_show,c_white,c_black);
 score_show=string_format(hscore,7,0);
 score_show=string_replace_all(score_show,' ','0');
 draw_text_outline(280,10,score_show,c_white,c_black);
-}
+}*/
 //draw_text(120,30,string(hp));
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="89">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_restart();
 </string>
           </argument>
         </arguments>
