@@ -68,6 +68,7 @@ with o_p1button{instance_destroy();}
 with o_p2button{instance_destroy();}
 instance_destroy();
 with o_player1{
+bar = c_yellow;
 audio_play_sound_on(s_sound,va_charge,false,10);
     instance_destroy();
     instance_create(x,y,fx);
@@ -90,6 +91,7 @@ if players =1{
     o_player1.mode = "Ready";
     o_player1.hp += 25;
     o_player1.hp = clamp(o_player1.hp,0,100);
+    o_player1.bar = c_yellow;
     }
 </string>
           </argument>
